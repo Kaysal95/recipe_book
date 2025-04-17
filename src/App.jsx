@@ -13,26 +13,22 @@ function App() {
 
   return (
     <div id="container">
-    <h1>Hello React Router!</h1>
+    <h1>Welcome to the Recipe Book!</h1>
       <div id="navbar">
-        <Link to="/recipe">All Recipies</Link>
+        <Link to="/">All Recipies</Link>
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
         <Link to="/favorites">Favorite Recipies</Link>
       </div>
       <div id="main-section">
         <Routes>
-          <Route path="/recipe" element={<RecipieList />} />
+          <Route path="/" element={<RecipieList />} />
           <Route path="/recipe/:id" element={<RecipieId />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/favorites" element={<Favorites />} />
         </Routes>
       </div>
-
-
-      <Register token={token} setToken={setToken} />
-      <Authenticate token={token} setToken={setToken} />
     </div>
   )
 }

@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+.recipe-card {
+  display: inline-block;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+  border: 1px;
+  border-radius: 16px;
+  margin: 1rem;
+  background-color: rgb(136, 136, 136);
+  box-shadow: 0 2px 8px;
+  width: 280px;
+  transition: transform 0.2s ease;
+  text-align: center;
+}
