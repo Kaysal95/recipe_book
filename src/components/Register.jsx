@@ -9,12 +9,19 @@ function Register({setToken}) {
         event.preventDefault()
 
         try { 
-            const response = await fetch("https://fsa-recipe.up.railway.app/api/auth/register")
+            const response = await fetch("https://fsa-recipe.up.railway.app/api/auth/register", {
+                    method: "POST",
+                    headers: { 
+                        "Content-Type": "application/json" 
+                    },
+                    body: JSON.stringify({ username, password })
+            })
             const result = await response.json()
+            console.log("Login result:", result)
             localStorage.setItem('token', result.token)
+            setToken(result.token)
         }catch(error) {
-            setError(error.message)
-
+            console.error("Register error:", error)
         }
     }
     
@@ -26,12 +33,15 @@ function Register({setToken}) {
             <form onSubmit={handleSubmit}>
                 <label>
                     Username: 
-                    <input value={username} 
+                    <input 
+                    value={username} 
                     onChange={(event) => setUsername(event.target.value)} />
                 </label>
                 <label>
                     Password: 
-                    <input value={password} 
+                    <input 
+                    type="password"
+                    value={password} 
                     onChange={(event) => setPassword(event.target.value)} />
                 </label>
                 <button>Submit</button>

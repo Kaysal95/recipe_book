@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import './App.css'
 import { Routes, Route, Link } from "react-router-dom"
-import RecipieList from './components/Recipe'
-import RecipieId from './components/Recipe_Id'
+import RecipeList from './components/Recipe'
+import RecipeId from './components/Recipe_Id'
 import Login from './components/Login'
 import Register from './components/Register'
 import Favorites from './components/Favorites'
@@ -15,18 +15,18 @@ function App() {
     <div id="container">
     <h1>Welcome to the Recipe Book!</h1>
       <div id="navbar">
-        <Link to="/">All Recipies</Link>
+        <Link to="/">All Recipes</Link>
         <Link to="/login">Login</Link>
         <Link to="/register">Register</Link>
-        <Link to="/favorites">Favorite Recipies</Link>
+        <Link to="/favorites">Favorite Recipes</Link>
       </div>
       <div id="main-section">
         <Routes>
-          <Route path="/" element={<RecipieList />} />
-          <Route path="/recipe/:id" element={<RecipieId />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/" element={<RecipeList />} />
+          <Route path="/recipe/:id" element={<RecipeId />} />
+          <Route path="/login" element={<Login setToken={setToken} />} />
+          <Route path="/register" element={<Register setToken={setToken} />} />
+          <Route path="/favorites" element={<Favorites token={token} />} />
         </Routes>
       </div>
     </div>

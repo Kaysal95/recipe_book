@@ -1,14 +1,26 @@
 import { Link } from "react-router-dom"
 
-function RecipieId(recipe) {
+function RecipeId({ recipe, token, isFavorite, handleFavoriteToggle }) {
+   
     return (
-         <div>
-            <h3>{recipe.name}</h3>
-            <Link to={'/recipe/${recipe.id}'}>View Details</Link>
+         <div className="recipe-card">
+            <h3>{recipe.strMeal}</h3>
+            <img 
+            className="recipe-image" 
+            src={recipe.strMealThumb} 
+            alt={recipe.strMeal} 
+            />
+            <Link to={`/recipe/${recipe.idMeal}`}>View Details</Link>
+
+            {token && (
+                <button onClick={() => handleFavoriteToggle(recipe.idMeal)}>
+                    {isFavorite ? "Unfavorite" : "Favorite"}
+                </button>
+            )}
         </div>
     )
 }
     
 
 
-export default RecipieId
+export default RecipeId
