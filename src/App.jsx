@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div id="container">
-    <h1>Welcome to the Recipe Book!</h1>
+    <h1 className="banner">Welcome to the Recipe Book!</h1>
       <div id="navbar">
         <Link to="/">All Recipes</Link>
         <Link to="/login">Login</Link>
