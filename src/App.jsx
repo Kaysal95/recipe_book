@@ -23,7 +23,7 @@ function App() {
       <div id="main-section">
         <Routes>
           <Route path="/" element={<RecipeList />} />
-          <Route path="/recipe/:id" element={<RecipeId />} />
+          <Route path="/recipe/:id" element={<RecipeId token={token}/>} />
           <Route path="/login" element={<Login setToken={setToken} />} />
           <Route path="/register" element={<Register setToken={setToken} />} />
           <Route path="/favorites" element={<Favorites token={token} />} />

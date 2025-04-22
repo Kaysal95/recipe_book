@@ -1,7 +1,7 @@
 import { useEffect } from "react"
 import { useState } from "react"
 import { Link } from "react-router-dom"
-import RecipeId from './Recipe_Id'
+import RecipeCard from "./RecipeCard"
 
 
 function RecipeList({ token }) {
@@ -63,7 +63,7 @@ function RecipeList({ token }) {
     return (
         <div className="recipe-grid">
             {recipes.map((recipe) => (
-                    <RecipeId
+                    <RecipeCard
                       key={recipe.idMeal}
                       recipe={recipe}
                       token={token}
